@@ -42,6 +42,8 @@ class Example extends Component {
 }
 ```
 
+Apply styles to the text using the props below, keep in mind that it's an SVG text element, so you will have to use `fill` instead of `color` etc.
+
 ## Props
 
 ### `children`
