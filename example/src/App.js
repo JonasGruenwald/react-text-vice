@@ -1,10 +1,37 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-text-vice'
-import 'react-text-vice/dist/index.css'
+import TextVice from 'react-text-vice'
 
-const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello there!"
+    }
+  }
+
+  handleTextChange = ({target}) => {
+    this.setState({text: target.value})
+  }
+
+  render() {
+    const {text} = this.state;
+    return (
+      <div style={{fontFamily: "sans-serif"}}>
+        <div>This text will scale too container width</div>
+
+        <TextVice
+          font="Times New Roman, serif"
+        >
+          {text}
+        </TextVice>
+
+        <div>Change Text</div>
+        <input type="text" onChange={this.handleTextChange} value={text}/>
+      </div>
+    )
+  }
 }
 
 export default App
