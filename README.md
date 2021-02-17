@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/react-text-vice.svg)](https://www.npmjs.com/package/react-text-vice) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+![Image of a vice / vise](./vice.png)
+
 A component that will place any text in an SVG `<text>` element and adjust the SVG `viewBox` so that the text fits in it
 perfectly.
 
