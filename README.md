@@ -12,6 +12,8 @@ to be fitted to a container as if it was an image, while still retaining its acc
 
 This is supposed to be an alternative to various text-fit / fit-text libraries that did not work for me.
 
+## [👉 Live Demo](https://jonasgruenwald.github.io/react-text-vice/)
+
 ## Install
 
 ```bash

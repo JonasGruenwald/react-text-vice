@@ -29,6 +29,8 @@ class App extends React.Component {
 
         <div>Change Text</div>
         <input type="text" onChange={this.handleTextChange} value={text}/>
+        <hr/>
+        <a href="https://github.com/JonasGruenwald/react-text-vice">GitHub</a>
       </div>
     )
   }
