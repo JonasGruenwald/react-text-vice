@@ -27,7 +27,6 @@ class TextVice extends React.Component {
     // If FontFace set is supported, recalculate when fonts have loaded
     if (document.fonts) {
       document.fonts.ready.then(() => {
-        console.log('fonts ready!')
         this.calculateBox()
       })
     }

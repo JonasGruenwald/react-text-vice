@@ -14,7 +14,7 @@ class App extends React.Component {
 
   handleChange = ({target}) => {
     this.setState({
-      [target.name] : [target.value]
+      [target.name] : target.value
     })
   }
 
@@ -27,7 +27,7 @@ class App extends React.Component {
         <TextVice
           font="Times New Roman, serif"
           textStyle={{
-            letterSpacing: spacing
+            letterSpacing: `${spacing}px`
           }}
         >
           {text}
@@ -43,6 +43,9 @@ class App extends React.Component {
         <div>Using an external font that loads in asynchronously</div>
         <TextVice
           textClassName="external-font"
+          textStyle={{
+            letterSpacing: `${spacing}px`
+          }}
         >
           {text}
         </TextVice>
