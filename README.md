@@ -56,8 +56,7 @@ Shortcut to set the `fontFamily` of the text, this can be used instead of textSt
 
 ### `textStyle` (Object)
 
-Styles to apply to the inner `<text>` Element, you can use this to set the font, text color etc, but changing the style
-will currently not trigger a re-fit.
+Styles to apply to the inner `<text>` Element, you can use this to set the font, text color etc.
 
 ### `svgStyle` (Object)
 
