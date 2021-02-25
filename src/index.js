@@ -13,14 +13,24 @@ class TextVice extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (String(prevProps.children) !== String(this.props.children)) {
+      // Recalculate on text change
       this.calculateBox()
     } else if (!isEqual(prevProps.textStyle, this.props.textStyle)) {
+      // Recalculate on style change
       this.calculateBox()
     }
   }
 
   componentDidMount() {
     this.calculateBox()
+
+    // If FontFace set is supported, recalculate when fonts have loaded
+    if (document.fonts) {
+      document.fonts.ready.then(() => {
+        console.log('fonts ready!')
+        this.calculateBox()
+      })
+    }
   }
 
   calculateBox() {
@@ -83,10 +93,10 @@ class TextVice extends React.Component {
 
 TextVice.propTypes = {
   children: PropTypes.node,
-  textStyle: PropTypes.Object,
-  svgStyle: PropTypes.Object,
-  textClassName: PropTypes.Object,
-  svgClassName: PropTypes.Object,
+  textStyle: PropTypes.object,
+  svgStyle: PropTypes.object,
+  textClassName: PropTypes.string,
+  svgClassName: PropTypes.string,
   font: PropTypes.string,
   onFit: PropTypes.func,
   height: PropTypes.string,
@@ -102,8 +112,8 @@ TextVice.defaultProps = {
   svgClassName: null,
   font: null,
   onFit: null,
-  width: 'auto',
-  height: 'auto',
+  width: '100%',
+  height: '100%',
   preserveAspectRatio: 'xMidYMid meet'
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-
 import TextVice from 'react-text-vice'
+import "./style.css"
 
 class App extends React.Component {
 
@@ -11,7 +11,6 @@ class App extends React.Component {
       spacing: 0
     }
   }
-
 
   handleChange = ({target}) => {
     this.setState({
@@ -36,9 +35,17 @@ class App extends React.Component {
 
         <div>Change Text</div>
         <input type="text" onChange={this.handleChange} name="text" value={text}/>
+        <br/> <br/>
         <div>Change Letter Spacing</div>
         <input type="range" onChange={this.handleChange} name="spacing" value={spacing} step="0.01" min="1" max="10"/>
 
+        <br/> <br/>
+        <div>Using an external font that loads in asynchronously</div>
+        <TextVice
+          textClassName="external-font"
+        >
+          {text}
+        </TextVice>
         <hr/>
         <a href="https://github.com/JonasGruenwald/react-text-vice">GitHub</a>
       </div>
