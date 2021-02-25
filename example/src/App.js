@@ -7,28 +7,38 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "Hello there!"
+      text: "Hello there!",
+      spacing: 0
     }
   }
 
-  handleTextChange = ({target}) => {
-    this.setState({text: target.value})
+
+  handleChange = ({target}) => {
+    this.setState({
+      [target.name] : [target.value]
+    })
   }
 
   render() {
-    const {text} = this.state;
+    const {text, spacing} = this.state;
     return (
       <div style={{fontFamily: "sans-serif"}}>
         <div>This text will scale too container width</div>
 
         <TextVice
           font="Times New Roman, serif"
+          textStyle={{
+            letterSpacing: spacing
+          }}
         >
           {text}
         </TextVice>
 
         <div>Change Text</div>
-        <input type="text" onChange={this.handleTextChange} value={text}/>
+        <input type="text" onChange={this.handleChange} name="text" value={text}/>
+        <div>Change Letter Spacing</div>
+        <input type="range" onChange={this.handleChange} name="spacing" value={spacing} step="0.01" min="1" max="10"/>
+
         <hr/>
         <a href="https://github.com/JonasGruenwald/react-text-vice">GitHub</a>
       </div>

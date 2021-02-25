@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isEqual } from 'lodash'
 
 class TextVice extends React.Component {
   constructor(props) {
@@ -12,6 +13,8 @@ class TextVice extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (String(prevProps.children) !== String(this.props.children)) {
+      this.calculateBox()
+    } else if (!isEqual(prevProps.textStyle, this.props.textStyle)) {
       this.calculateBox()
     }
   }
