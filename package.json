@@ -25,7 +25,8 @@
     "distribute": "npm run deploy && npm publish"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
