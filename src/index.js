@@ -34,6 +34,16 @@ class TextVice extends React.Component {
 
   calculateBox() {
     const box = this.textEl.current.getBBox()
+
+    // Crop vertically by given factor if passed
+    if (this.props.cropTop) {
+      box.y += box.height * this.props.cropTop
+      box.height -= box.height * this.props.cropTop
+    }
+    if (this.props.cropBot) {
+      box.height -= box.height * this.props.cropBot
+    }
+
     this.setState(
       {
         viewBox: `${box.x} ${box.y} ${box.width} ${box.height}`
@@ -100,7 +110,9 @@ TextVice.propTypes = {
   onFit: PropTypes.func,
   height: PropTypes.string,
   width: PropTypes.string,
-  preserveAspectRatio: PropTypes.string
+  preserveAspectRatio: PropTypes.string,
+  cropTop: PropTypes.number,
+  cropBot: PropTypes.number
 }
 
 TextVice.defaultProps = {
@@ -113,7 +125,9 @@ TextVice.defaultProps = {
   onFit: null,
   width: '100%',
   height: '100%',
-  preserveAspectRatio: 'xMidYMid meet'
+  preserveAspectRatio: 'xMidYMid meet',
+  cropTop: null,
+  cropBot: null
 }
 
 export default TextVice

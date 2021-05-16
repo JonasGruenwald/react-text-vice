@@ -79,6 +79,10 @@ with any other SVG.
 
 Function to be called when text has been fit, will be passed the `viewBox` string calculated for the outer `<svg>`
 
+### `cropTop`, `cropBot` (Number)
+
+Factor relative to the calculated height to crop from the top and bottom.
+
 ## License
 
 MIT © [JonasGruenwald](https://github.com/JonasGruenwald)

@@ -49,6 +49,18 @@ class App extends React.Component {
         >
           {text}
         </TextVice>
+        <br/><br/>
+        <div>Cropping vertically</div>
+        <TextVice
+          cropTop={0.25}
+          cropBot={0.25}
+          font="Arial Black, sans-serif"
+          textStyle={{
+            letterSpacing: `${spacing}px`
+          }}
+        >
+          {text}
+        </TextVice>
         <hr/>
         <a href="https://github.com/JonasGruenwald/react-text-vice">GitHub</a>
       </div>
